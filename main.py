@@ -3,10 +3,12 @@ import wikipedia
 import wave
 from piper.voice import PiperVoice
 
-
-model = "en_US-amy-medium.onnx"
-config = "en_US-amy-medium.onnx.json"
-voice = PiperVoice.load(model, config_path=config)
+try:
+    model = "en_US-amy-medium.onnx"
+    config = "en_US-amy-medium.onnx.json"
+    voice = PiperVoice.load(model, config_path=config)
+except:
+    print("Error, voice missing, go to https://huggingface.co/rhasspy/piper-voices/tree/main to get voices.")
 
 wikitopic = input("Wikipedia page> ")
 wikitopic = wikipedia.page(str(wikitopic))
