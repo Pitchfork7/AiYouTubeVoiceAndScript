@@ -14,7 +14,7 @@ with open("script.txt", "w") as f:
   f.write(results)
 print(results)
 
-if say = "y":
+if say == "y":
   engine.save_to_file(results, 'speech.mp3')
 
   engine.runAndWait()
